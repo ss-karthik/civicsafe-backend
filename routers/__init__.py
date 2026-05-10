@@ -1,0 +1,1 @@
+from routers import auth_router, detection_router, analytics_router, authority_router
