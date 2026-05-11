@@ -14,6 +14,13 @@ class Settings(BaseSettings):
     #  - bcrypt (preferred for many deployments, requires bcrypt wheel)
     HASHING_SCHEME: str = "pbkdf2_sha256"
 
+    # Analytics export
+    ANALYTICS_EXCEL_PATH: str = "analytics_reports.xlsx"
+    GOOGLE_SERVICE_ACCOUNT_FILE: str = "hexart-civicsafe-ed0da593f434.json"
+    GOOGLE_SHEET_ID: str = ""
+    GOOGLE_SHEET_NAME: str = ""
+    GOOGLE_SHEET_TAB_NAME: str = ""
+
     class Config:
         env_file = ".env"
 
