@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+
+.venv/
+
+.env
+hexart-civicsafe-ed0da593f434.json
+
+analytics_reports.xlsx
+*.xlsx.tmp
+
+server.out.log
+server.err.log
+*.pyc

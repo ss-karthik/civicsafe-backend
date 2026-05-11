@@ -5,6 +5,7 @@ from collections import Counter
 
 from database import get_db
 from auth import require_admin
+from analytics_exporter import export_analytics_log
 import models, schemas
 
 router = APIRouter(prefix="/analytics", tags=["analytics"])
@@ -55,6 +56,8 @@ async def get_analytics(
     for (ts,) in report_times:
         if ts:
             time_counts[time_period(ts.hour)] += 1
+
+    await export_analytics_log(db)
 
     return schemas.AnalyticsSummary(
         total_reports=total or 0,
